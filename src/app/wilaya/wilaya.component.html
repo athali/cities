@@ -1,0 +1,53 @@
+<div>
+  wilaya works!
+
+  <h2>Wilayas</h2>
+
+
+
+
+<ul class="wilayas">
+  <li *ngFor ="let wilaya of wilayas" (click)= "onSelect(wilaya)" >
+
+    <span class="badge">{{wilaya.name}}</span>
+        <span class="badge">{{wilaya.coce}}</span>
+            <span class="badge">{{wilaya.number_commune}}</span>
+                <span class="badge">{{wilaya.number_daira}}</span>
+                    <span class="badge">{{wilaya.area}}</span>
+                        <span class="badge">{{wilaya.density}}</span>
+                        <span class="badge">{{wilaya.population_66}}</span>
+                            <span class="badge">{{wilaya.population_77}}</span>
+                                <span class="badge">{{wilaya.population_08}}</span>
+  </li>
+</ul>
+
+</div>
+
+
+
+
+<div *ngIf="selectedWilaya">
+  <h2>{{selectedWilaya.name | uppercase}} Details</h2>
+   <div><span>administration code: </span>{{selectedWilaya.code}}</div>
+   <div>
+     <label>name:
+         <input [(ngModel)]="selectedWilaya.name" placeholder="name"/>
+     </label>
+   </div>
+
+<!--
+  <h2>{{city.code}} Details</h2>
+
+  <div>
+    <label>name:
+      <input [(ngModel)]="city.code" placeholder="code" type="text"/>
+    </label>
+  </div>
+
+
+
+<div><span>daira: </span>{{city.number_daira}}</div>
+  <div><span>communes: </span>{{city.number_commune}}</div>
+-->
+
+</div>
